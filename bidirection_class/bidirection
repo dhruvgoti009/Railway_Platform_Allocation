@@ -1,0 +1,7 @@
+class bidirection : public virtual check_valid_platform       //Using Multilevel Inheritance....
+{
+
+    public:
+            int add_train(string new_arrivial,string new_departure,int size);
+
+};
