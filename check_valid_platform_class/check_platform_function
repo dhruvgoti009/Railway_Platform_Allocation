@@ -1,0 +1,60 @@
+int check_valid_platform :: check_platform(int i,vector<pair<string,string>> store[],string new_arrivial,string new_departure)
+            {
+                     count=0;
+
+                     new_arrivial_hour=((new_arrivial[0]-'0')*10)+(new_arrivial[1]-'0');
+                     new_arrivial_minute=((new_arrivial[3]-'0')*10)+(new_arrivial[4]-'0');
+                     new_departure_hour=((new_departure[0]-'0')*10)+(new_departure[1]-'0');
+                     new_departure_minute=((new_departure[3]-'0')*10)+(new_departure[4]-'0');
+
+
+
+
+                    for(int j=0;j<store[i].size();j++)
+                    {
+
+
+                        string old_arrivial=store[i][j].first;
+                        string old_departure=store[i][j].second;
+                        int old_arrivial_hour=((old_arrivial[0]-'0')*10)+(old_arrivial[1]-'0');
+                        int old_arrivial_minute=((old_arrivial[3]-'0')*10)+(old_arrivial[4]-'0');
+                        int old_departure_hour=((old_departure[0]-'0')*10)+(old_departure[1]-'0');
+                        int old_departure_minute=((old_departure[3]-'0')*10)+(old_departure[4]-'0');
+                         a=new_arrivial_hour;
+                         b=new_departure_hour;
+                         c=new_arrivial_hour;
+                         d=new_departure_hour;
+
+                        if(new_arrivial_hour>new_departure_hour)
+                            d+=24;
+                        else if(new_arrivial_hour == new_departure_hour  && new_arrivial_minute>new_departure_minute)
+                            d+=24;
+
+                        x=old_arrivial_hour;
+                        y=old_departure_hour;
+                        if(old_arrivial_hour>old_departure_hour)
+                            y+=24;
+                        else if(old_arrivial_hour==old_departure_hour && old_arrivial_minute>old_departure_minute)
+                            y+=24;
+
+                           if(d-c<y-x)
+                            a=old_arrivial_hour,b=old_departure_hour;
+                         check_valid mast;
+                        if(a==new_arrivial_hour)
+                            e=mast.CTT(a,b,old_arrivial_hour,old_departure_hour,new_arrivial_minute,new_departure_minute,old_arrivial_minute,old_departure_minute,new_arrivial_hour,new_departure_hour);
+                        else
+                            e=mast.CTT(a,b,new_arrivial_hour,new_departure_hour,new_arrivial_minute,new_departure_minute,old_arrivial_minute,old_departure_minute,new_arrivial_hour,new_departure_hour);
+
+                         if(!e)
+                          break;
+                       count++;
+
+
+
+                   }
+                   return count;
+
+
+
+
+                }
