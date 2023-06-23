@@ -1,0 +1,87 @@
+//This is compare two train time
+
+int check_valid :: CTT(int a,int b,int x,int y,int new_arrivial_minute,int new_departure_minute,int old_arrivial_minute,int old_departure_minute,int new_arrivial_hour,int new_departure_hour)    //Declared Different Type Of Method....
+            {
+                arrivial_hour=a,departure_hour=b;
+                if(a==b)
+                {
+
+                    if(new_arrivial_minute>new_departure_minute)
+                    {
+                        if(!(old_arrivial_minute>new_departure_minute && old_departure_minute<new_arrivial_minute))
+                        return 0;
+                    }
+                    if(old_arrivial_minute>old_departure_minute)
+                    {
+                        if(!(new_arrivial_minute>old_departure_minute && new_departure_minute<old_arrivial_minute))
+                        return 0;
+                    }
+                }
+
+                while(a!=(b+1))
+                {
+                    a%=24;
+                    if(a==x || a==y)
+                    {
+
+                        if(a==arrivial_hour || a==departure_hour)
+                        {
+                            if(a==x && a==y && a==arrivial_hour)
+                            {
+                                if(new_arrivial_minute>=old_arrivial_minute && new_arrivial_minute<=old_departure_minute)
+                                    return 0;
+
+                            }
+                            if(a==x && a==y && a==departure_hour)
+                            {
+                                if(new_departure_minute>=old_arrivial_minute && new_departure_minute<=old_departure_minute)
+                                    return 0;
+                            }
+                            if(a==arrivial_hour && a==x)
+                            {
+
+                                    return 0;
+                            }
+                            if(a==departure_hour && a==x)
+                            {
+                                if(departure_hour==new_departure_hour)
+                                {
+
+                                    if(new_departure_minute>=old_arrivial_minute)
+                                    return 0;
+                                }
+                                else
+                                {
+                                    if(new_arrivial_minute<=old_departure_minute)
+                                        return 0;
+                                }
+                            }
+                            if(a==arrivial_hour && a==y)
+                            {
+                                if(arrivial_hour==new_arrivial_hour)
+                                {
+                                    if(new_arrivial_minute<=old_departure_minute)
+                                    return 0;
+                                }
+                                else
+                                {
+                                    if(new_departure_minute>=old_arrivial_minute)
+                                        return 0;
+                                }
+                            }
+                            if(a==departure_hour && a==y)
+                            {
+
+                                return 0;
+                            }
+                        }
+                        else
+                        {
+                            return 0;
+                        }
+                    }
+                    a++;
+
+                }
+                return 1;
+              }
