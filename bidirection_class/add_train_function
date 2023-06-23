@@ -1,0 +1,32 @@
+int bidirection :: add_train(string new_arrivial,string new_departure,int size)
+            {
+               total_size+=size;
+               if(!CBFT && total_size<=40)
+               {
+                  SBTD[0].push_back({new_arrivial,new_departure});
+                  cout<<"This Train Allocate In Bidirection Section Number: "<<1<<endl;
+                  CBFT=1;
+                  sum[0]=total_size;
+                  return 1;
+               }
+               if(total_size>40)
+                  {
+                     total_size-=size;
+                     return 0;
+                  }
+               for(int i=0;i<3;i++)
+               {
+                    int count=0;
+                    check_valid_platform fun;
+                     if(fun.check_platform(i,SBTD,new_arrivial,new_departure)==SBTD[i].size())
+                     {
+                        sum[i]+=size;
+                        total_size-=(sum[i]-size);
+                        cout<<"Allocate This Train In Bidirection Section Number: "<<i+1<<endl;
+                        SBTD[i].push_back({new_arrivial,new_departure});
+                        return 1;
+                     }
+
+               }
+               return 0;
+            }
