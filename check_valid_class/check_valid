@@ -1,0 +1,17 @@
+class check_valid : public interfaces2      //Using Simple Inheritances....
+{
+    public:
+        check_valid()                       //Declared Constructor....
+        {
+            this->arrivial_hour=0;
+            this->departure_hour=0;
+        }
+
+    private:
+        int arrivial_hour;
+        int departure_hour;
+    public:
+
+            int CTT(int a,int b,int x,int y,int new_arrivial_minute,int new_departure_minute,int old_arrivial_minute,int old_departure_minute,int new_arrivial_hour,int new_departure_hour);
+            // CTT --> Comapre Two Train Time....
+};
