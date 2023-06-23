@@ -1,0 +1,27 @@
+class check_valid_platform : public check_valid,public interfaces1   //Using Multiple Inheritance....
+{
+    public:                             //Declared Public Access Modifier.....
+    check_valid_platform()
+    {
+        this->new_arrivial_hour=0;
+        this->new_arrivial_minute=0;
+        this->new_departure_hour=0;
+        this->new_departure_minute;
+        this->count=0;
+        this->a=0;this->b=0;this->c=0;this->d=0;this->e=0;
+        this->x=0;this->y=0;
+    }
+    private:                           //Declared Private Access Modifier.....
+        int new_arrivial_hour;
+        int new_arrivial_minute;
+        int new_departure_hour;
+        int new_departure_minute;
+        int count;
+        int a,b,c,d,e;
+        int x,y;
+    public:
+
+
+        int check_platform(int i,vector<pair<string,string>> store[],string new_arrivial,string new_departure);
+
+};
