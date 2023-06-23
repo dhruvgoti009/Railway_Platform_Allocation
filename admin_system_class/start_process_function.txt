@@ -1,0 +1,54 @@
+void admin_system :: start_time_process()
+        {
+
+            cout<<"Enter How Many Total Train You Want To Entered: ";
+
+               cin>>number_of_train;
+             one_direction obj1;
+               for(int i=0;i<number_of_train;i++)
+               {
+                 cout.flush();
+                 sleep(1);                    //Using Sleep Method For Stop Executing For 1 Second....
+
+                 try
+                 {
+                 cout<<endl<<endl<<"Enter Train"<<i+1<<"'s Arrivial Time <HH:MM>: ";
+
+                     cin>>start_time;
+
+                     cout<<endl<<"Enter Train"<<i+1<<"'s Departure Time <HH:MM>: ";
+
+                     cin>>end_time;
+
+
+
+                     cout<<endl<<"Enter Number Of Cabs(Integer) In Train"<<i+1<<" : ";
+
+                         cin>>cabs;
+
+                         if(!check_valid_string(start_time))
+                         {
+                            throw start_time;
+                         }
+                         if(!check_valid_string(end_time))
+                         {
+                            throw end_time;
+                         }
+                         if(!check_valid_number(cabs))
+                            {
+                                throw cabs;
+                            }
+                        n=stoi(cabs);
+
+                     obj1.add_train(start_time,end_time,n);
+                 }
+                 catch(string str)
+                 {
+                    cout<<str<<" It's Not A Valid...."<<endl;
+                    cout<<"Again Insert Valid Form...."<<endl;
+                    i--;
+
+                 }
+
+               }
+        }

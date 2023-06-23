@@ -1,0 +1,9 @@
+bool admin_system :: check_valid_number(string cabs)
+{
+    for(int i=0;i<cabs.size();i++)
+    {
+        if(!(cabs[i]>='0' && cabs[i]<='9'))
+            return 0;
+    }
+    return 1;
+}
