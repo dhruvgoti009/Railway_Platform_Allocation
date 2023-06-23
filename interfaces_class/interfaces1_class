@@ -1,0 +1,9 @@
+class interfaces1                               //Declared Interfec1....
+{
+
+    public:
+        virtual ~interfaces1() {}              //Create Destructor Of Interfaces1 Class....
+        virtual  int check_platform(int i,vector<pair<string,string>> store[],string new_arrivial,string new_departure)=0; //Declared An Abstract Method....
+
+
+};
