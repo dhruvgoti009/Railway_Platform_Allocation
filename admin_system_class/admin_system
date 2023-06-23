@@ -1,0 +1,28 @@
+class admin_system : public one_direction    //Using Multileval Inheritance....
+{
+    public:
+    admin_system()
+    {
+        for(int i=0;i<4;i++)
+            SOTD[i].clear(),SBTD[i].clear();
+        for(int i=0;i<3;i++)
+            sum[i]=0;
+        COFT=0;
+        CBFT=0;
+        total_size=0;
+    }
+    ~admin_system()                         //Using Default Destructor....
+    {
+        cout<<"Thank Yous...."<<endl;
+    }
+    private:
+        int number_of_train;
+        string start_time;
+        string end_time;
+        string cabs;
+        int n;
+    public:
+        void start_time_process();
+        bool check_valid_string(string str);
+        bool check_valid_number(string cabs);
+};
