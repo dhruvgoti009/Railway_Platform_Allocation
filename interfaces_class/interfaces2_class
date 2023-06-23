@@ -1,0 +1,7 @@
+class interfaces2
+{
+    public:
+        virtual ~interfaces2() {}
+        virtual  int CTT(int a,int b,int x,int y,int new_arrivial_minute,int new_departure_minute,int old_arrivial_minute,int old_departure_minute,int new_arrivial_hour,int new_departure_hour)=0;
+
+};
