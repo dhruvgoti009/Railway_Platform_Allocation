@@ -1,0 +1,14 @@
+class one_direction : public virtual check_valid_platform,public bidirection     //Using Hierarhical Inheritance....
+{
+    public:
+        one_direction()
+        {
+            this->STP=0;
+        }
+    private:
+        int STP;     //Start Checking In Which Platform We add_trained Train....
+    public:
+            int add_train(string new_arrivial,string new_departure,int size);          //Using Method Overriding....
+
+
+};
