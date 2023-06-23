@@ -1,0 +1,47 @@
+int one_direction :: add_train(string new_arrivial,string new_departure,int size)
+            {
+                   if(size>30)
+                      {
+                        bidirection obj2;
+                               if(!obj2.add_train(new_arrivial,new_departure,size))
+                               cout<<"Sorry We Can Not Insert This Train In Any Platform: "<<endl;
+                            return 0;
+                      }
+                   if(!COFT)
+                   {
+                      if(size<=15)
+                         SOTD[0].push_back({new_arrivial,new_departure}),COFT=1;
+                      else if(size<=20)
+                         SOTD[1].push_back({new_arrivial,new_departure}),COFT=1;
+                      else if(size<=25)
+                         SOTD[2].push_back({new_arrivial,new_departure}),COFT=1;
+                      else if(size<=30)
+                         SOTD[3].push_back({new_arrivial,new_departure}),COFT=1;
+
+                      cout<<"This Train Is Allocate In Platform Number: "<<1<<endl;
+                      return 0;
+
+                   }
+                   check_valid_platform fun;
+                    STP=size-11;
+                   if(STP<0)
+                      STP=0;
+                   STP=STP/5;
+                   for(int i=STP;i<4;i++)
+                   {
+                               int count=0;
+
+
+                            if(fun.check_platform(i,SOTD,new_arrivial,new_departure)==SOTD[i].size())
+                            {
+                               cout<<"Allocate This Train In Platform Number: "<<i+1<<endl;
+                               SOTD[i].push_back({new_arrivial,new_departure});
+                               return 1;
+                            }
+                   }
+                   bidirection obj2;
+                   if(!obj2.add_train(new_arrivial,new_departure,size))
+                      cout<<"Sorry We Can Not Insert This Train In Any Platform: "<<endl;
+                  return 0;
+
+           }
